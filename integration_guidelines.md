@@ -176,8 +176,7 @@ Nevertheless, Gireve decides to extend Locations and Tariffs with “gireve_id�
 | CDRs | Object owner Id | Yes | - |
 | Tariffs | Object owner Id | Tariff object is extended with “gireve_id” when transferred to a receiver party. | 
 
-# `Gireve management of Locations data `
-## `Gireve management of Locations data`
+# `Gireve management of Locations data`
 
 Gireve and its systems distinguish two natures of Location properties:
 •	Static data: Locations properties which almost never change.
@@ -188,7 +187,8 @@ All Location properties are considered as static data except for the status of t
 -   GIREVE performs a specific process to first integrate static data of CPO Locations in its charge point repository then to integrate static data changes like changes on a Location of a CPO or new Locations or EVSEs. This process implies data quality tests and data completion of the CPO Locations. This process is asynchronous from the standard connection of the CPO with Gireve’s IOP platform, meaning that new Locations of the CPO or updates on them can be seen in the Gireve charge point repository several hours after the first PUSH from the CPO to the Gireve IOP platform.
 
 
-# `Roaming `
+# `Roaming`
+
 
 ### General workflow
 
