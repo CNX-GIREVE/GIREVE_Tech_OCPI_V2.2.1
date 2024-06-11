@@ -217,46 +217,6 @@ The CPO connected to Gireve through OCPI have two options to manage and “publi
 -   In this case, the CPO manages its tariffs on its own and eMSPs cannot give their insights or validation about applied tariffs.
 -   In case of tariff updates, the CPO and the eMSP do not need to sign an amendment.
   
-### RFID Tokens
-
-OCPI introduces a specific use of resource identification mechanism, to manage situations where resource belongs to servers and situations where resource belongs to client. [See OCPI client owned object.](https://github.com/ocpi/ocpi/blob/release-2.1.1-bugfixes/transport_and_format.md)
-
-In OCPI, Objects managed through Rest protocol are owned by the CPO or the eMSP:
-
--   Tokens are owned by the eMSP
--   Locations are owned by the CPO
--   Sessions are owned by the CPO
--   CDRs are owned by the CPO
--   Tariffs are owned by the CPO
-
-IOP acts as a hub which routes the messages between CPOs and eMSPs, so IOP does not own objects exchanged by these two actors during their communication.
-
-**<ins>IOP is not the owner of the exchanged resources. Following this principle, IOP uses “country-code” and “partner-id” of the object owner during communication with other operators.</ins>**
-
-For example, IOP pushes Locations of a CPO to an eMSP using “country-code/party-id” of the CPO in the URL.
-
-![image](https://github.com/CNX-GIREVE/GIRVE_Tech_OCPI_V2.1.1/assets/137178502/4c52c925-a330-40a8-90f5-55f7fdf3e41a)
-
-### Pagination
-
-IOP implements pagination mechanisms described by OCPI. [*See OCPI pagination mechanism.*](https://github.com/ocpi/ocpi/blob/release-2.1.1-bugfixes/transport_and_format.md#pagination)
-
-IOP requires operators to use pagination when they pull resources requesting IOP. If the operator does not use pagination arguments in its request, IOP will force it answering with the first **X** items and a Link to the second page if any.
-
-Finally, for each module, IOP has its own max size limit per page (20 Locations, 1000 Tokens, …). These limits can change with IOP evolutions, the operator implementation must be flexible regarding these limits.
-
-### IOP HTTP headers
-
-The next version of OCPI, OCPI 2.2, integrates new extra headers enabling the sharing of a single OCPI connection to multiple operators.
-
-Gireve has begun to deploy these extra headers in its OCPI version 2.1.1 but it is an ongoing action.
-
-**<ins>These extra headers should not be considered yet in OCPI 2.1.1, except for “PULL Tokens: Retrieve Tokens of a single given eMSP” (see chapter 3.7.4 page 22) and “PULL Tokens: Retrieve Locations of a single given CPO” (see chapter 4.4.3 page 29)</ins>**
-
--   ocpi-to-country-code
--   ocpi-to-party-id
--   ocpi-from-country-code
--   ocpi-from-party-id
 
 ## `OCPI modules implemented by IOP`
 
@@ -299,33 +259,6 @@ An OCPI Roaming session through IOP should run the following workflow :
 #### Session status information exchange, stop then Charge Detail Record
 
 ![image](https://github.com/CNX-GIREVE/GIRVE_Tech_OCPI_V2.1.1/assets/137178502/ac509c35-6d0b-4e82-b83a-048aa302c283)
-
-### New attribute « authorization_id »
-
-**<ins>IOP uses a new attribute « authorization_id » for Session, CDR, AuthorizationInfo and StartSession objects.</ins>**
-
-This information is used to associate the « authorization » given by the eMSP at the beginning of a charging session with Sessions and CDR related to it. This allows to tackle real business cases, for example an eMSP giving 2 authorisations and receiving 3 CDRs. Which ones should it pay?
-
-This new property must be provided by the eMSP during the authorisation process, then used by the CPO when it sends Sessions and CDRs related to the authorisation.
-
-**<ins>This property is implemented in OCPI 2.2 under the name “authorization_reference”.</ins>**
-
-#### “authorization_id” in local authorization
-
-![image](https://github.com/CNX-GIREVE/GIRVE_Tech_OCPI_V2.1.1/assets/137178502/ec32c777-cca6-4f69-ad2d-9bc2121d69d1)
-
-#### “authorization_id” in remote authorization
-
-![image](https://github.com/CNX-GIREVE/GIRVE_Tech_OCPI_V2.1.1/assets/137178502/a9ec03ea-c428-4ece-aaf4-250ca84d0723)
-
-#### “authorization_id” in Sessions
-
-![image](https://github.com/CNX-GIREVE/GIRVE_Tech_OCPI_V2.1.1/assets/137178502/e0f0d1a6-4c65-4e05-913c-1cb9926aa2ec)
-
-#### “authorization_id” in CDRs
-
-![image](https://github.com/CNX-GIREVE/GIRVE_Tech_OCPI_V2.1.1/assets/137178502/4c43625c-efb0-4daf-b7ef-a4e7d1128223)
-
 
 ## `Management of B2B tariffs`
 
