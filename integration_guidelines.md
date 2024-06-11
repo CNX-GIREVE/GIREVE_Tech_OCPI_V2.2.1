@@ -177,6 +177,7 @@ Nevertheless, Gireve decides to extend Locations and Tariffs with “gireve_id�
 | Tariffs | Object owner Id | Tariff object is extended with “gireve_id” when transferred to a receiver party. | 
 
 # `Gireve management of Locations data `
+## `Gireve management of Locations data`
 
 Gireve and its systems distinguish two natures of Location properties:
 •	Static data: Locations properties which almost never change.
