@@ -199,7 +199,8 @@ Some use cases are required when connecting to Gireve.
 | **Push CDRs - ToIOP** | The CPO must send the CDR in real time after the end of the charging-session. |
 
 
-**If the CPO doesn’t commit and describe its tariffs in a roaming agreement** | Use case | Why? |
+**If the CPO doesn’t commit and describe its tariffs in a roaming agreement**
+| Use case | Why? |
 | ----------- | ----------- |
 | **Push Tariffs - ToIOP** | CPOs must inform in real-time, through IOP, eMSPs about tariff changes. |
 
