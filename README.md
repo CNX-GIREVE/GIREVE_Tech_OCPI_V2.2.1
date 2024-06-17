@@ -60,21 +60,21 @@ For more information, check the standard OCPI specifications : [OCPI 2.2.1](http
   - List of available Commands
   - New field "connector_id" in START_SESSION
     
-* [Sessions Module Specification](cpo_sessions.md)
+* [Sessions Module Specifications](cpo_sessions.md)
   - Session Initialisation
   - Smart charging use cases
   - PATCH Sessions
   - Store and forward – PUT Sessions
   - Advenir specific use case
     
-* [Cdrs Module Specification](cpo_cdrs.md)
+* [Cdrs Module Specifications](cpo_cdrs.md)
   - CDR sending frequency
   - CDR content
   - CreditCDR
   - Store and forward – POST CDRs
   - Advenir specific use case
     
-* [Tariffs Module Specification](cpo_tariffs.md)
+* [Tariffs Module Specifications](cpo_tariffs.md)
   - Locations tariff update
   - Tariff shall be immutable
   - Differentiate tariff per eMSP
