@@ -8,7 +8,7 @@
 
 ***
 
-# `Locations module specifications`
+# `Tokens module specifications`
 
 IOP follows the OCPI standard for Tokens module. [See OCPI 2.2.1 specifications.](https://github.com/ocpi/ocpi/blob/release-2.2.1-bugfixes/mod_tokens.asciidoc)
 
