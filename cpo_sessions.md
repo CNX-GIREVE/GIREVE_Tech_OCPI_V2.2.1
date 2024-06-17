@@ -2,7 +2,7 @@
 
 # Contents
 
-* [Sessions Module Specifications](sessions-module-specifications)
+* [Sessions Module Specifications](#sessions-module-specifications)
   - Session Initialisation
   - Smart charging use cases
   - PATCH Sessions
