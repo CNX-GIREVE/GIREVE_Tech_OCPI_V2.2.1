@@ -71,5 +71,5 @@ Similarly to a POST Cdrs, Store and Forward mechanism must be implemented to ens
 Information and requirements
 
 -   In Gireve’s model, the tariff is attached to the EVSE level and not to the connector level. IOP keeps "tariff_ids" attached to the first connector of the EVSE in the payload and applies them to the EVSE. "tariff_ids" of other connectors are ignored.
--   Gireve extends "Tariff" object with 2 new properties target_operator_country_code and target_operator_party_id enabling a CPO to differentiate tariff description per eMSP. See 3.8.3 Differentiate tariff per eMSP.
+-   Gireve extends "Tariff" object with 2 new properties target_operator_country_code and target_operator_party_id enabling a CPO to differentiate tariff description per eMSP. [See Differentiate tariff per eMSP.](#differentiate-tariff-per-emsp)
 -   A tariff shall be immutable, that’s why Gireve suggests CPOs  never update a tariff description, except for text properties and "end_date".
