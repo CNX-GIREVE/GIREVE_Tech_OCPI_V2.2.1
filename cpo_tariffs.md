@@ -46,7 +46,7 @@ This behaviour works with the following main principles :
 -   When a CPO is pulled by IOP to get tariffs, it shall respond with multiple iterations for a single "tariff_id", one for each tariff description.
 
 Example:
-CPO FR*CPO pushes 3 times tariff "tariff_A" :
+*CPO FR*CPO pushes 3 times tariff "tariff_A" :*
 
  |tariff id |	Description | target_operator_country_code and target_operator_party_id values |
 | ----------- | ----------- | ----------- |
@@ -54,9 +54,11 @@ CPO FR*CPO pushes 3 times tariff "tariff_A" :
 | tariff_A |	0,10€/kWh	| NL MP2 |
 | tariff_A |	0,80€/h |	- |
 
-"tariff_A" is 0,80€/h for all eMSPs
-Except for eMSP NLMP2 for which “tariff_A” is 0,10€/kWh
-And for eMSP DEMP1 for which “tariff_A” is 0,50€/h
+*"tariff_A" is 0,80€/h for all eMSPs*
+
+*Except for eMSP NLMP2 for which “tariff_A” is 0,10€/kWh*
+
+*And for eMSP DEMP1 for which “tariff_A” is 0,50€/h*
 
 ## Tariffs are attached to the EVSE level
 In Gireve’s model, the tariff is attached to the EVSE level and not to the connector level. IOP keeps “tariff_ids” attached to the first connector of the EVSE in the payload and applies them to the EVSE. “tariff_ids” of other connectors are ignored.
