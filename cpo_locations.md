@@ -32,17 +32,17 @@ Gireve requires some information to be filled by CPOs in Locations data, even if
 
 The attributes of the Location object are of 2 types:
 -   Static attributes are data attributes that do not change frequently (address, localisation …). These data are integrated in Gireve database through the Gireve quality process and could take some time before to be stored by Gireve and displayed to eMSPs.
--   Dynamic attributes are data attributes that may change frequently (availability, occupied/free …). In OCPI 2.2.1, only “EVSE.status” and “Connector.tariff_ids” are considered as dynamic. These data are integrated in real-time by Gireve when CPOs send updates to IOP.
+-   Dynamic attributes are data attributes that may change frequently (availability, occupied/free …). In OCPI 2.2.1, only **<ins>“EVSE.status”</ins>** and **<ins>“Connector.tariff_ids”</ins>** are considered as **dynamic**. These data are integrated in real-time by Gireve when CPOs send updates to IOP.
 
 ## "tariff_ids" property
 
 Gireve uses the “tariff_ids” information provided by CPOs in Locations to dispatch CPO’s EVSEs into separated EVSE tariff groups. Also, CPOs can refer to these tariff groups when they describe tariffs directly in their roaming offer via Gireve’s connect place.
 If CPOs use the OCPI Tariffs module to send their tariffs, the management of tariffs and relations to the charging infrastructure follows the OCPI standard except that in Gireve systems, tariffs are linked to EVSEs and not to connectors.
-In its current implementation of OCPI 2.2.1, Gireve stores all tariffs coming from CPOs, whatever their nature, but transfers only “B2B Regular” tariffs to eMSPs, whatever their protocol.
+In its current implementation of OCPI 2.2.1, Gireve stores all tariffs coming from CPOs, whatever their nature, but transfers only **<ins>“B2B Regular”</ins>** tariffs to eMSPs, whatever their protocol.
 
 ## "publish" property
 The “publish” information, added in OCPI 2.2.1 on Locations level, is used by CPO to inform other parties that the Location shall not be displayed on any support (i.e. a map on mobile application, …).
-As this information doesn’t exist in OCPI 2.1.1, Gireve doesn’t send Locations with “publish” value false to eMSPs connected to IOP in OCPI 2.1.1.
+As this information doesn’t exist in OCPI 2.1.1, Gireve doesn’t send Locations with **<ins>“publish”</ins>** value false to eMSPs connected to IOP in OCPI 2.1.1.
 
 ## Store and Forward – PUT and PATCH Locations
 A Store and Forward mechanism shall be implemented by CPOs to ensure that no data upload may be lost, in case of a connection loss. Any data upload that didn’t get a correct response (HTTP code: 2xx) from  Gireve IOP platform  must be stored on CPO side and a retry process must be active. After the connection recovery, the Data Upload messages must be resent in a FIFO manner.
