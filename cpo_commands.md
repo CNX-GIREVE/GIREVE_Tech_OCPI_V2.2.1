@@ -24,4 +24,4 @@ IOP follows the OCPI standard for Sessions sent by a CPO. [See OCPI 2.2.1 specif
 
 ## New field “connector_id”  in START_SESSION
 
-A new field **<ins>“connector_id”</ins>** was added to the START_SESSION request in OCPI 2.2.1. As it is not present in OCPI 2.1.1 , eMSPs connected to IOP in OCPI 2.1.1 are not able to send this information, even if it is mandatory for CPO.
+A new field **“connector_id”** was added to the START_SESSION request in OCPI 2.2.1. As it is not present in OCPI 2.1.1 , eMSPs connected to IOP in OCPI 2.1.1 are not able to send this information, even if it is mandatory for CPO.
