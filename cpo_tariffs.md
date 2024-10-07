@@ -5,6 +5,7 @@
 * [Tariffs Module Specifications](#tariffs-module-specifications)
   - Locations tariff update
   - Tariff shall be immutable
+  - Tariffs Information required by Gireve
   - Differentiate tariff per eMSP
   - Tariffs are attached to the EVSE level
   - Store and forward – PUT Tariffs
@@ -26,6 +27,21 @@ In case of tariff changes on a Location, Gireve suggests  CPOs :
 
 Management of tariffs is complex for CPOs and eMSPs, especially when tariff description changes (i.e. same tariff_id, different description). That’s why Gireve suggests CPOs  never change tariff properties attached to the price calculation. 
 The only information that can change shall be textual properties or end_date.
+
+## Tariffs Information required by Gireve
+
+Gireve requires some information to be filled by CPOs in Tariff data, even if they are optional in the OCPI 2.2.1 standard. This information is used to ensure data quality.
+
+*List of the required properties :*
+| Property |	Reason |
+| ----------- | ----------- |
+| start_date-time | The CPO must send us a start_date_time to indicate the date from which the tariff applies. the tariff start_date_time is used to bill sessions with tariffs that apply when the session is active. If the CPO does not send us a start_date_time, the date of reception will be the start of the tariff's applicability. |
+
+*Exemple :* 
+- There was a bug on 09/25 in the CPO system, so we didn't receive the tariffs applicable on 09/25, nor the sessions.
+- The CPO returned the same tariffs on 26/09 without start_date_time, so we set start_date_time to 26/09.
+- The charge sessions of 25/09 cannot be billed with these tariffs as they are applicable from 26/09.
+
 
 ## Differentiate tariff per eMSP
 
