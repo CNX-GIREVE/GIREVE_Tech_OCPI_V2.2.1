@@ -10,7 +10,8 @@ For more information, check the standard OCPI specifications : [OCPI 2.2.1](http
 
 # Contents
 - [Version History](version_history.md)
-- [CPO Specific implementation guidelines](cpo_edits.md).
+- [CPO Specific implementation guidelines](cpo_edits.md)
+- [eMSP Specific implementation guidelines](emsp_edits.md)
 
 ## [Introduction](introduction.md)
 *  [Aims](introduction.md#aims)
