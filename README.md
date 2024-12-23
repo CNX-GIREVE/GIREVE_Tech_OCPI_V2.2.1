@@ -79,5 +79,61 @@ For more information, check the standard OCPI specifications : [OCPI 2.2.1](http
   - Differentiate tariff per eMSP
   - Tariffs are attached to the EVSE level
   - Store and forward – PUT Tariffs
+ 
+## [eMSP Specfic Implementation Guidelines](emsp_edits.md)
+* [Uses Cases Covered by IOP](.md)
+  - Uses Cases Covered by Gireve  
+* [Connection & Register Specifications](emsp_registration.md)
+
+* [Locations Module Specifications](emsp_locations.md)
+  - Static and dynamic attributes
+  - PULL Locations: Retrieve Locations of a single given CPO
+  - PULL Locations ToIOP: Get List, Full and Delta modes
+  - PULL Locations ToIOP: evse_id
+  - PULL Locations ToIOP: “gireve_id” An Extra Gireve Property
+  - PULL Locations ToIOP: tariff_ids
+  - PULL Locations ToIOP: Plug&Charge (P&C)
+  - PULL Locations ToIOP: Connector Standards
+  - Fields Not Implemented by Gireve
+  - PUSH Locations FromIOP
+
+ * [Tokens Module Specifications](emsp_tokens.md)
+  - Push Tokens ToIOP
+  - PULL Tokens FromIOP
+    
+* [Commands Module specifications](emsp_commands.md)
+  - “ocpi-to-country-code” and “ocpi-to-party-id” headers mandatory in StartSession and StopSession commands
+  - “evse_uid” mandatory in StartSession command
+  - “connector_id” optional in StartSession command
+  - ReserveNow command
+  - CancelReservation command
+  - UnlockConnector command
+
+* [Sessions Module Specification](emsp_sessions.md)
+  - Session: Object IDs
+  - Session: ‘VAT’
+  - Session: ‘SESSION_TIME’
+  - Session: ‘SmartCharging’
+  - PULL Sessions ToIOP: Get List Pagination
+    
+* [Cdrs Module Specification](emsp_cdrs.md)
+  - CDR: Object IDs
+  - CDR content
+  - CDR: ‘SESSION_TIME’
+  - Add billing information in “Remark” field
+  - Fields Not Implemented by Gireve
+  - PULL CDRs ToIOP: Get List Pagination 
+    
+* [Tariffs Module Specification](emsp_tariffs.md)
+  - PULL Tariffs ToIOP: Object ID
+  - PULL Tariffs ToIOP: “gireve_id” An Extra Gireve Property
+  - PULL Tariffs ToIOP: Tariff Type
+  - PULL Tariffs ToIOP: CPO Targeting
+  - PULL Tariffs ToIOP: eMSP Targeting
+  - PULL Tariffs ToIOP: Get List Pagination
+  - Specific properties added by Gireve
+
+
+
 
 
