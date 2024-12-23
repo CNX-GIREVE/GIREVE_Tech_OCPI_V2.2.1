@@ -10,7 +10,8 @@ For more information, check the standard OCPI specifications : [OCPI 2.2.1](http
 
 # Contents
 - [Version History](version_history.md)
-- [CPO Specific implementation guidelines](cpo_edits.md).
+- [CPO Specific implementation guidelines](cpo_edits.md)
+- [eMSP Specific implementation guidelines](emsp_edits.md)
 
 ## [Introduction](introduction.md)
 *  [Aims](introduction.md#aims)
@@ -30,8 +31,7 @@ For more information, check the standard OCPI specifications : [OCPI 2.2.1](http
   - Pagination
   - Pulling Limits
   - List of OCPI Modules
-  - Gireve management of Ids
-    
+  - 
 * [GIREVE management of Locations data](integration_guidelines.md#gireve-management-of-locations-data)
 * [Roaming](integration_guidelines.md#roaming)
   - General workflow
@@ -39,8 +39,8 @@ For more information, check the standard OCPI specifications : [OCPI 2.2.1](http
   - RFID Tokens
 
 ## [CPO Specfic Implementation Guidelines](cpo_edits.md)
-* [CPO Operation Definition And Naming Rules](definiton_roaming_uses_cases.md/#cpo-operation-definition-and-naming-rules)
-* [CPO Operation And Roaming Offers](definiton_roaming_uses_cases.md/#cpo-operation-and-roaming-offers)
+* [CPO Operation Definition And Naming Rules](cpo_registration.md/#cpo-operation-definition-and-naming-rules)
+* [CPO Operation And Roaming Offers](cpo_registration.md/#cpo-operation-and-roaming-offers)
   - Uses Cases Covered by IOP
   - Uses Cases Covered by Gireve  
 * [Connection & Register Specifications](cpo_registration.md)
@@ -60,25 +60,76 @@ For more information, check the standard OCPI specifications : [OCPI 2.2.1](http
   - List of available Commands
   - New field "connector_id" in START_SESSION
     
-* [Sessions Module Specifications](cpo_sessions.md)
+* [Sessions Module Specification](cpo_sessions.md)
   - Session Initialisation
   - Smart charging use cases
   - PATCH Sessions
   - Store and forward – PUT Sessions
   - Advenir specific use case
     
-* [Cdrs Module Specifications](cpo_cdrs.md)
+* [Cdrs Module Specification](cpo_cdrs.md)
   - CDR sending frequency
   - CDR content
   - CreditCDR
   - Store and forward – POST CDRs
   - Advenir specific use case
     
-* [Tariffs Module Specifications](cpo_tariffs.md)
+* [Tariffs Module Specification](cpo_tariffs.md)
   - Locations tariff update
   - Tariff shall be immutable
   - Differentiate tariff per eMSP
   - Tariffs are attached to the EVSE level
   - Store and forward – PUT Tariffs
+ 
+## [eMSP Specfic Implementation Guidelines](emsp_edits.md)
+* [Uses Cases Covered by IOP](.md)
+  - Uses Cases Covered by Gireve  
+* [Connection & Register Specifications](emsp_registration.md)
 
+* [Locations Module Specifications](emsp_locations.md)
+  - Static and dynamic attributes
+  - PULL Locations: Retrieve Locations of a single given CPO
+  - PULL Locations ToIOP: Get List, Full and Delta modes
+  - PULL Locations ToIOP: evse_id
+  - PULL Locations ToIOP: “gireve_id” An Extra Gireve Property
+  - PULL Locations ToIOP: tariff_ids
+  - PULL Locations ToIOP: Plug&Charge (P&C)
+  - PULL Locations ToIOP: Connector Standards
+  - Fields Not Implemented by Gireve
+  - PUSH Locations FromIOP
 
+ * [Tokens Module Specifications](emsp_tokens.md)
+  - Push Tokens ToIOP
+  - PULL Tokens FromIOP
+    
+* [Commands Module specifications](emsp_commands.md)
+  - “ocpi-to-country-code” and “ocpi-to-party-id” headers mandatory in StartSession and StopSession commands
+  - “evse_uid” mandatory in StartSession command
+  - “connector_id” optional in StartSession command
+  - ReserveNow command
+  - CancelReservation command
+  - UnlockConnector command
+
+* [Sessions Module Specification](emsp_sessions.md)
+  - Session: Object IDs
+  - Session: ‘VAT’
+  - Session: ‘SESSION_TIME’
+  - Session: ‘SmartCharging’
+  - PULL Sessions ToIOP: Get List Pagination
+    
+* [Cdrs Module Specification](emsp_cdrs.md)
+  - CDR: Object IDs
+  - CDR content
+  - CDR: ‘SESSION_TIME’
+  - Add billing information in “Remark” field
+  - Fields Not Implemented by Gireve
+  - PULL CDRs ToIOP: Get List Pagination 
+    
+* [Tariffs Module Specification](emsp_tariffs.md)
+  - PULL Tariffs ToIOP: Object ID
+  - PULL Tariffs ToIOP: “gireve_id” An Extra Gireve Property
+  - PULL Tariffs ToIOP: Tariff Type
+  - PULL Tariffs ToIOP: CPO Targeting
+  - PULL Tariffs ToIOP: eMSP Targeting
+  - PULL Tariffs ToIOP: Get List Pagination
+  - Specific properties added by Gireve
