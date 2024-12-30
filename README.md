@@ -85,7 +85,7 @@ For more information, check the standard OCPI specifications : [OCPI 2.2.1](http
 ## [eMSP Specfic Implementation Guidelines](emsp_edits.md)
 * [Uses Cases Covered by IOP](.md)
   - Uses Cases Covered by Gireve  
-* [Connection & Register Specifications](emsp_registration.md)
+* [Connection & Register Specifications](cpo_registration.md)
 
 * [Locations Module Specifications](emsp_locations.md)
   - Static and dynamic attributes
