@@ -114,14 +114,12 @@ For more information, check the standard OCPI specifications : [OCPI 2.2.1](http
 * [Sessions Module Specification](emsp_sessions.md)
   - Session: Object IDs
   - Session: ‘VAT’
-  - Session: ‘SESSION_TIME’
   - Session: ‘SmartCharging’
   - PULL Sessions ToIOP: Get List Pagination
     
 * [Cdrs Module Specification](emsp_cdrs.md)
   - CDR: Object IDs
   - CDR content
-  - CDR: ‘SESSION_TIME’
   - Add billing information in “Remark” field
   - Fields Not Implemented by Gireve
   - PULL CDRs ToIOP: Get List Pagination 
