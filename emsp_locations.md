@@ -44,9 +44,7 @@ For information, when eMSP PULL Locations list from IOP, IOP follows the below l
 | ----------- | ----------- | ----------- |
 | CREATE | New Location is part of the response. | New EVSE is part of the response. | New Connector is part of the response. |
 | UPDATE	| Updates are parts of the response. | Updated EVSE is part of the response. |NUpdated Connector is part of the response. |
-| DELETE |	- Using « date_from » and/or « date_to» option, response contains all EVSEs of the Location with « REMOVED » value for « status » field.
-- Without « date_from » and/or « date_to» option, the response does not contain this Location. |	- Using « date_from » and/or « date_to» option, response contains the EVSE with « REMOVED » value for « status » field.
-- Without « date_from » and/or « date_to» option, the response does not contain this EVSE. |	Deleted Connectors are not part of the response. |
+| DELETE |	- Using « date_from » and/or « date_to» option, response contains all EVSEs of the Location with « REMOVED » value for « status » field. - Without « date_from » and/or « date_to» option, the response does not contain this Location. |	- Using « date_from » and/or « date_to» option, response contains the EVSE with « REMOVED » value for « status » field. - Without « date_from » and/or « date_to» option, the response does not contain this EVSE. |	Deleted Connectors are not part of the response. |
 
 If the eMSP wants to retrieve a list of Locations, it can call the URL: /ocpi/sender/2.2.1/locations?date_from= using the paginated properties date_from, date_to, offset and limit.
 
