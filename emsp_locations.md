@@ -64,8 +64,11 @@ It may happen that evse_id may not be compliant with the eMI3 standard.
 ## PULL Locations ToIOP: “gireve_id” An Extra Gireve Property
 
 In OCPI **2.1.1**, Gireve uses its internal ID (Gireve ID) to identify a location, EVSE, or connector when transmitting location data to an eMSP.
+
 In OCPI **2.2.1**, the availability of the country_code and party_id fields allows the eMSP to identify the CPO owning the location. As a result, Gireve will send external IDs, as provided by the CPO in the OCPI fields, instead of internal IDs to eMSPs connected via OCPI 2.2.1.
-In addition to the external ID, Gireve will also include a new field (not part of the OCPI protocol), called gireve_id, for each of the following elements: Location / EVSE / Connector. It is useful for an eMSP upgrading from OCPI 2.1.1 to OCPI 2.2.1 to reconcile the location data received via these two protocols.
+
+In addition to the external ID, Gireve will also include a new field (not part of the OCPI protocol), called gireve_id, for each of the following elements : **Location / EVSE / Connector.**
+It is useful for an eMSP upgrading from OCPI 2.1.1 to OCPI 2.2.1 to reconcile the location data received via these two protocols.
 
 
 ## PULL Locations ToIOP: tariff_ids
