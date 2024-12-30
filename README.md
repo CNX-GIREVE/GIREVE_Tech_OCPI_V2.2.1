@@ -31,7 +31,7 @@ For more information, check the standard OCPI specifications : [OCPI 2.2.1](http
   - Pagination
   - Pulling Limits
   - List of OCPI Modules
-  - 
+    
 * [GIREVE management of Locations data](integration_guidelines.md#gireve-management-of-locations-data)
 * [Roaming](integration_guidelines.md#roaming)
   - General workflow
