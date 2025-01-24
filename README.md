@@ -40,10 +40,10 @@ For more information, check the standard OCPI specifications : [OCPI 2.2.1](http
   - RFID Tokens
 
 ## [CPO Specfic Implementation Guidelines](cpo_edits.md)
-* [CPO Operation Definition And Naming Rules](cpo_registration.md/#cpo-operation-definition-and-naming-rules)
-* [CPO Operation And Roaming Offers](cpo_registration.md/#cpo-operation-and-roaming-offers)
-* [Uses Cases Covered by IOP](cpo-emsp_covered_by_gireve.md)
-  - Uses Cases Covered by Gireve  
+* [CPO Operation Definition And Naming Rules](definiton_roaming_uses_cases.md)
+* [CPO Operation And Roaming Offers](definiton_roaming_uses_cases.md/#cpo-operation-and-roaming-offers)
+* [Use Cases Covered by IOP](definiton_roaming_uses_cases.md/#use-cases-covered-by-iop)
+  - Use Cases Covered by Gireve  
 * [Connection & Register Specifications](cpo_registration.md)
 
 * [Locations Module Specifications](cpo_locations.md)
