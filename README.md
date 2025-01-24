@@ -83,7 +83,7 @@ For more information, check the standard OCPI specifications : [OCPI 2.2.1](http
   - Store and forward – PUT Tariffs
  
 ## [eMSP Specfic Implementation Guidelines](emsp_edits.md)
-* [Uses Cases Covered by IOP](.md)
+* [Uses Cases Covered by IOP](cpo-emsp_covered_by_gireve.md)
   - Uses Cases Covered by Gireve  
 * [Connection & Register Specifications](cpo_registration.md)
 
