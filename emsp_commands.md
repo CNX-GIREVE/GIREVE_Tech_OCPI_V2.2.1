@@ -10,7 +10,6 @@
   - CancelReservation command
   - UnlockConnector command
 
-
 ***
 
 # `Commands Module Specifications`
