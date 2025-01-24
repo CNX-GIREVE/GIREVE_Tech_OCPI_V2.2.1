@@ -33,14 +33,14 @@ It doesn’t include the duration during which the EVSE is out of order so canno
 ## Add billing information in “Remark” field
 
 In some cases, the CPO is not able to send a consistent B2B price in the CDR. (“total_cost” not mandatory for CPOs connected through eMIP protocol, CPO not able to calculate the price, …)
+
 For these reasons GIREVE has implemented a billing feature, included in its “Clearing” service, which calculates the B2B price for a given CDR and injects this information in the CDR.
 IOP uses the “Remark” field in CDRs sent to the eMSP to send extra information about this billing. 
 
 The “Remark” field is prefixed by :
 -  [*] prefix: The total_cost provided in the CDR is calculated by Gireve.
 -  [?] prefix: The total_cost provided in the CDR is not significant. The B2B price has not been sent by the CPO and/or the eMSP has not subscribed to Gireve Clearing service.
--  No prefix: The total_cost provided in the CDR has been sent by the CPO.
-  
+-  No prefix: The total_cost provided in the CDR has been sent by the CPO.  
 
 ## Fields Not Implemented by Gireve
 
