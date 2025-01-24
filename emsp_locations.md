@@ -22,7 +22,8 @@ IOP follows the OCPI 2.2.1 standard for Locations upload by a CPO. [See OCPI 2.2
 
 ## Static and dynamic attributes
 
-The attributes of the Location object are of 2 types:
+The attributes of the Location object are of 2 types :
+
 -   Static attributes are data attributes that do not change frequently (address, localisation …). These data are integrated in Gireve database through the Gireve quality process and could take some time before to be stored by Gireve and displayed to eMSPs.
 -   Dynamic attributes are data attributes that may change frequently (availability, occupied/free …). In OCPI 2.2.1, only **<ins>“EVSE.status”</ins>** and **<ins>“Connector.tariff_ids”</ins>** are considered as **dynamic**. These data are integrated in real-time by Gireve when CPOs send updates to IOP.
 
@@ -38,7 +39,7 @@ If the eMSP wants to retrieve all the Locations, it should not include **« date
 
 **<ins>NB</ins>**: The Location and EVSE deletion logic is different if using « date_from » and/or « date_to» parameters or not. When « date_from » and/or « date_to» are present, the eMSP get EVSEs of the Location in status « REMOVED » whereas without « date_from » and/or « date_to» parameters the deleted items are not included in the response (see table below).
 
-For information, when eMSP PULL Locations list from IOP, IOP follows the below logic in responses provided:
+For information, when eMSP PULL Locations list from IOP, IOP follows the below logic in responses provided :
 
 | LOCATION |	EVSE | CONNECTOR |
 | ----------- | ----------- | ----------- |
@@ -49,11 +50,9 @@ For information, when eMSP PULL Locations list from IOP, IOP follows the below l
 If the eMSP wants to retrieve a list of Locations, it can call the URL: /ocpi/sender/2.2.1/locations?date_from= using the paginated properties date_from, date_to, offset and limit.
 
 Parameters « offset » and « limit » are optional but IOP always returns a paginated response (subset of objects list and link, X-Total-Count and X-limit headers).
-The eMSP must call the link returned in the headers to get the next pages. 
+The eMSP must call **the link returned in the headers** to get the next pages. 
 
 IOP has its own max limit **(100 Locations)** and answers with its if the client limit is upper than IOP one or the client doesn’t set its limit. 
-
-
 
 ## PULL Locations ToIOP: evse_id
 
@@ -70,12 +69,12 @@ In OCPI **2.2.1**, the availability of the country_code and party_id fields allo
 In addition to the external ID, Gireve will also include a new field (not part of the OCPI protocol), called gireve_id, for each of the following elements : **Location / EVSE / Connector.**
 It is useful for an eMSP upgrading from OCPI 2.1.1 to OCPI 2.2.1 to reconcile the location data received via these two protocols.
 
-
 ## PULL Locations ToIOP: tariff_ids
 
 When the eMSP download the locations, it receives only tariffs_id with the type “REGULAR” (B2B) and they are mapped with external_id of tariff(s) as sent by CPOs.
 
 ## PULL Locations ToIOP: Plug&Charge (P&C)
+
 The ability to enable Plug & Charge (P&C) functionality, eliminating the need for a physical badge, offers a significant improvement in the user experience for EV drivers.
 
 Gireve has implemented a mechanism allowing CPOs to inform eMSPs about EVSE compatibility with Plug & Charge by introducing two new capabilities at the EVSE level :
@@ -86,7 +85,6 @@ Gireve has implemented a mechanism allowing CPOs to inform eMSPs about EVSE comp
 | Location.evse.capabilities	| ISO_15118_20_PLUG_AND_CHARGE | Compatibility of an EVSE with PnC using ISO15118-20 |
 
 > :warning: <ins>**eMSPs should accept these two new capabilities when they are provided by Gireve.**</ins>
-
 
 ## PULL Locations ToIOP: Connector Standards
 
