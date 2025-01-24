@@ -27,11 +27,9 @@ Some use cases are required when connecting to Gireve
 
 ### Information and Requirements
 
-• The implementation and certification of the OCPI Tariffs module depends on the tariff’s strategy of the CPO. It is not required if the CPO describes its tariffs through the Gireve connect place.
-• CDRs shall be sent as soon as possible after the end of the charge.
-
-
-
+- The implementation and certification of the OCPI Tariffs module depends on the tariff’s strategy of the CPO. It is not required if the CPO describes its tariffs through the Gireve connect place.
+  
+- CDRs shall be sent as soon as possible after the end of the charge.
 
 
 # `eMSP Use cases required by Gireve`
@@ -52,6 +50,7 @@ Some use cases are required when connecting to Gireve
 
 ### Information and Requirements
 
-• eMSP tokens must be uploaded to the IOP to enable roaming with CPOs connected via OCPI 2.1.1.
-• eMSPs must always be able to receive CDRs sent by CPOs as soon as possible after the end of the charge.
+- eMSP tokens must be uploaded to the IOP to enable roaming with CPOs connected via OCPI 2.1.1.
+
+- eMSPs must always be able to receive CDRs sent by CPOs as soon as possible after the end of the charge.
 
