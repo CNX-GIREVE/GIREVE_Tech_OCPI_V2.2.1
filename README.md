@@ -42,7 +42,7 @@ For more information, check the standard OCPI specifications : [OCPI 2.2.1](http
 ## [CPO Specfic Implementation Guidelines](cpo_edits.md)
 * [CPO Operation Definition And Naming Rules](cpo_registration.md/#cpo-operation-definition-and-naming-rules)
 * [CPO Operation And Roaming Offers](cpo_registration.md/#cpo-operation-and-roaming-offers)
-  - Uses Cases Covered by IOP
+* [Uses Cases Covered by IOP](cpo-emsp_covered_by_gireve.md)
   - Uses Cases Covered by Gireve  
 * [Connection & Register Specifications](cpo_registration.md)
 
