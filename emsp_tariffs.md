@@ -56,7 +56,7 @@ The eMSP must call the link returned in the headers to get the next pages.
 
 IOP has its own max limit (**100 Tariffs**) and answers with its if the client limit is upper than IOP one or the client doesn’t set its limit.
 
-The timeframe (‘date_from’ and ‘date_to’) used in the request parameters must be lower than one month.
+The timeframe (‘date_from’ and ‘date_to’) used in the request parameters must be lower than **one month**.
 
 ## Specific properties added by Gireve
 
