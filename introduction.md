@@ -27,10 +27,10 @@ This document also covers some operational requirements that must be considered 
 | **RPC** | Référentiel des Points de Charge (in French) = Charge Points Repository (in English) The **RPC** is a system, built around a database that contains Electric Vehicles Charge Infrastructure (EVCI) description. It is connected to **IOP**. **IOP**’s interfaces (eMIP, OCPI …) are the only way to access **RPC**, for partners systems. |
 | **ToIOP** | Referring to flows for which an operator requests Gireve platform **IOP**. Partner system is client. IOP is server |
 | **FromIOP** | Referring to flows for which Gireve platform **IOP** requests an operator. **IOP** is client. Partner system is server |
-| Platform | A platform is a backend communicating with IOP through OCPI. A platform can manage one to several operators. |
-| Operator | An operator is a business entity as a CPO or an eMSP and supervised by a platform. |
-| Headers-To | Refers to OCPI 2.2.1 headers “OCPI-to-country-code” and “OCPI-to-party-id” |
-| Headers-From | Refers to OCPI 2.2.1 headers “OCPI-from-country-code” and “OCPI-from-party-id” |
+| **Platform** | A platform is a backend communicating with IOP through OCPI. A platform can manage one to several operators. |
+| **Operator** | An operator is a business entity as a CPO or an eMSP and supervised by a platform. |
+| **Headers-To** | Refers to OCPI 2.2.1 headers “OCPI-to-country-code” and “OCPI-to-party-id” |
+| **Headers-From** | Refers to OCPI 2.2.1 headers “OCPI-from-country-code” and “OCPI-from-party-id” |
 
 ## `Cardinality expression`
 
