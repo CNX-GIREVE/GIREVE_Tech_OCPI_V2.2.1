@@ -1,6 +1,6 @@
 ### [<- Back to module selection](emsp_edits.md)
 
-
+ 
 # Contents 
 * [Locations module specifications](#locations-module-specifications)
   - Static and dynamic attributes
