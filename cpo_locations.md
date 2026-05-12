@@ -45,20 +45,18 @@ In its current implementation of OCPI 2.2.1, Gireve stores all tariffs coming fr
 The “publish” information, added in OCPI 2.2.1 on Locations level, is used by CPO to inform other parties that the Location shall not be displayed on any support (i.e. a map on mobile application, …).
 As this information doesn’t exist in OCPI 2.1.1, Gireve doesn’t send Locations with **<ins>“publish”</ins>** value false to eMSPs connected to IOP in OCPI 2.1.1.
 
-## Plug&Charge (P&C)
+## Plug&Charge (P&C): Connector Object - new attribute “capabilities”
 
 The ability to enable Plug & Charge (P&C) functionality, eliminating the need for a physical badge, offers a significant improvement in the user experience for EV drivers.
 
-Gireve has implemented a mechanism allowing CPOs to inform eMSPs about EVSE compatibility with Plug & Charge by introducing two new capabilities at the EVSE level:
+In alignment with the OCPI 2.3 white paper, which recommends adding Plug & Charge capabilities at the Connector level rather than the EVSE level (as currently defined in OCPI 2.1.1 and 2.2.1), Gireve has implemented a mechanism enabling CPOs to inform eMSPs about EVSE compatibility with Plug & Charge.
+
+To achieve this, Gireve has introduced a new attribute, capabilities, at the Connector object level. This attribute accepts the following list of values:
 
 | OCPI Field |	Enum | Description |
 | ----------- | ----------- | ----------- |
-| Location.evse.capabilities | SO_15118_2_PLUG_AND_CHARGE | Compatibility of an EVSE with P&C using ISO15118-2 |
-| Location.evse.capabilities | SO_15118_20_PLUG_AND_CHARGE | Compatibility of an EVSE with P&C using ISO15118-20 |
-
-
-## Store and Forward – PUT and PATCH Locations
-A Store and Forward mechanism shall be implemented by CPOs to ensure that no data upload may be lost, in case of a connection loss. Any data upload that didn’t get a correct response (HTTP code: 2xx) from  Gireve IOP platform  must be stored on CPO side and a retry process must be active. After the connection recovery, the Data Upload messages must be resent in a FIFO manner.
+| Location.evse.connector.capabilities | SO_15118_2_PLUG_AND_CHARGE | Compatibility of an EVSE with P&C using ISO15118-2 |
+| Location.evse.connector.capabilities | SO_15118_20_PLUG_AND_CHARGE | Compatibility of an EVSE with P&C using ISO15118-20 |
 
 ### Information and requirements
 -   Locations static data follow a quality process before they are integrated in Gireve’s repository, meaning that Locations creation, update or deletion could take some time before being integrated by Gireve then displayed to other parties.
