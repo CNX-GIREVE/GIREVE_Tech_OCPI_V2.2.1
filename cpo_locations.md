@@ -7,7 +7,7 @@
   - Static and dynamic attributes
   - "tariff_ids" property
   - "publish" property
-  - Plug&Charge (P&C)
+  - Plug&Charge (P&C) : Connector Object - new attribute “capabilities”
   - Store and Forward – PUT and PATCH Locations
 
 ***
