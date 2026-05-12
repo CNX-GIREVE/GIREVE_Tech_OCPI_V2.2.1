@@ -81,8 +81,11 @@ In Gireve’s model, the tariff is attached to the EVSE level and not to the con
 
 
 ## Store and forward – PUT Tariffs
-Similarly to a POST Cdrs, Store and Forward mechanism must be implemented to ensure that no Tariffs can be lost, in case of a connection loss. Any PUT Tariffs that didn’t get a correct response (HTTP code: 2xx) from  Gireve IOP platform must be stored on CPO side and a retry process must be active. After the connection recovery, the Tariffs messages must be resent in a FIFO manner. eMSP Specific Implementation Guidelines.
+For Tariffs, retries are optional and non-blocking. A retry mechanism may be implemented, but it is only recommended under controlled conditions: retries should be infrequent (in hours, not minutes) and must not follow any loop logic. This is because tariff data is relatively static and does not carry real-time criticality.
 
+Retries must not be executed immediately when receiving platform error codes such as 425 (Too Early) or 429 (Too Many Requests). These errors indicate that requests are being sent too early or too frequently, and immediate retries would worsen the situation. In such cases, the client is expected to wait at least one hour before retrying, using a progressive backoff strategy.
+
+A strict retry policy must be applied: retries must never be executed in an uncontrolled loop or in parallel bursts, especially when no successful response (HTTP 2XX) has been received. As a general recommendation, no more than one retry per hour should be performed. Ideally, a dedicated processing queue should be implemented per flow type (Sessions, CDRs, Tokens, Tariffs, etc.), with sequential processing to ensure system stability and compliance.
 
 Information and requirements
 
