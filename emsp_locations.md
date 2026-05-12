@@ -73,16 +73,18 @@ It is useful for an eMSP upgrading from OCPI 2.1.1 to OCPI 2.2.1 to reconcile th
 
 When the eMSP download the locations, it receives only tariffs_id with the type “REGULAR” (B2B) and they are mapped with external_id of tariff(s) as sent by CPOs.
 
-## PULL Locations ToIOP: Plug&Charge (P&C)
+## PULL Locations ToIOP: Plug&Charge (P&C): Connector Object - new attribute “capabilities”
 
 The ability to enable Plug & Charge (P&C) functionality, eliminating the need for a physical badge, offers a significant improvement in the user experience for EV drivers.
 
-Gireve has implemented a mechanism allowing CPOs to inform eMSPs about EVSE compatibility with Plug & Charge by introducing two new capabilities at the EVSE level :
+In alignment with the OCPI 2.3 white paper, which recommends adding Plug & Charge capabilities at the Connector level rather than the EVSE level (as currently defined in OCPI 2.1.1 and 2.2.1), Gireve has implemented a mechanism enabling CPOs to inform eMSPs about EVSE compatibility with Plug & Charge.
+
+To achieve this, Gireve has introduced a new attribute, capabilities, at the Connector object level. This attribute accepts the following list of values:
 
 | OCPI Field |	Enum | Description |
 | ----------- | ----------- | ----------- |
-| Location.evse.capabilities | ISO_15118_2_PLUG_AND_CHARGE | Compatibility of an EVSE with PnC using ISO15118-2 | 
-| Location.evse.capabilities	| ISO_15118_20_PLUG_AND_CHARGE | Compatibility of an EVSE with PnC using ISO15118-20 |
+| Location.evse.connector.capabilities | ISO_15118_2_PLUG_AND_CHARGE | Compatibility of an EVSE with PnC using ISO15118-2 | 
+| Location.evse.connector.capabilities	| ISO_15118_20_PLUG_AND_CHARGE | Compatibility of an EVSE with PnC using ISO15118-20 |
 
 > :warning: <ins>**eMSPs should accept these two new capabilities when they are provided by Gireve.**</ins>
 
@@ -127,7 +129,7 @@ Gireve then forwards the dynamic status changes of the EVSE using the external I
 
 -  When the eMSP downloads the locations, it receives only the tariff_id with the type " REGULAR" (B2B), and these are mapped with the tariff ID(s) as sent by the CPOs.
 
--  Gireve has implemented a mechanism allowing CPOs to inform eMSPs about EVSE compatibility with Plug & Charge by introducing two new capabilities at the EVSE level: Location.evse.capabilities. ISO_15118_2_PLUG_AND_CHARGE and Location.evse.capabilities. ISO_15118_20_PLUG_AND_CHARGE. eMSPs should accept these two new capabilities when they are provided by Gireve.
+-  Gireve has implemented a mechanism allowing CPOs to inform eMSPs about EVSE compatibility with Plug & Charge by introducing two new capabilities at the EVSE level: Location.evse.connector.capabilities. ISO_15118_2_PLUG_AND_CHARGE and Location.evse.connector.capabilities. ISO_15118_20_PLUG_AND_CHARGE. eMSPs should accept these two new capabilities when they are provided by Gireve.
 
 -  All connector standards, including US types, are supported by Gireve and communicated to eMSPs.
 
