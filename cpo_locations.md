@@ -8,6 +8,7 @@
   - "tariff_ids" property
   - "publish" property
   - Plug&Charge (P&C) : Connector Object - new attribute “capabilities”
+  - PULL Locations FromIOP: Location Integration vs. Refresh Process
 
 ***
 
@@ -56,6 +57,20 @@ To achieve this, Gireve has introduced a new attribute, capabilities, at the Con
 | ----------- | ----------- | ----------- |
 | Location.evse.connector.capabilities | SO_15118_2_PLUG_AND_CHARGE | Compatibility of an EVSE with P&C using ISO15118-2 |
 | Location.evse.connector.capabilities | SO_15118_20_PLUG_AND_CHARGE | Compatibility of an EVSE with P&C using ISO15118-20 |
+
+### PULL Locations FromIOP: Location Integration vs. Refresh Process
+
+Only Gireve can integrate a CPO’s locations through the Pull Locations process and then publish them on the Gireve platform. The data is first processed through Gireve’s quality validation workflow before being stored in the Gireve database and displayed to eMSPs. As a result, this process may take some time.
+
+Therefore, when a CPO sends a PUT, PATCH Location, or EVSE request, it does not automatically create a new object or update static data for an existing object on the Gireve platform.
+
+The CPO supervising system can receive Pull Locations requests from Gireve in two distinct use cases:
+
+•	Location Integration and Static Data Update:
+In this scenario, the request is intended to retrieve all locations for all CPOs managed by the supervising system. The CPO will not receive the ocpi_to_country_code and ocpi_to_party_id headers in the request.
+
+•	Dynamic Data Refresh:
+In this scenario, the request is intended to refresh the dynamic data associated with each location for each CPO. The CPO will receive the ocpi_to_country_code and ocpi_to_party_id headers in the request.
 
 ### Information and requirements
 -   Locations static data follow a quality process before they are integrated in Gireve’s repository, meaning that Locations creation, update or deletion could take some time before being integrated by Gireve then displayed to other parties.
