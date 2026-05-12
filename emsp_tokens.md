@@ -5,6 +5,7 @@
 * [Tokens module specifications](#tokens-module-specifications)
   - Push Tokens ToIOP
   - Pull Tokens FromIOP
+  - “LocationReferences” mandatory in POST Tokens Authorize requests
 
 ***
 
