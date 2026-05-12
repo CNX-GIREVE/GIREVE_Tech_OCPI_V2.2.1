@@ -9,7 +9,7 @@
   - PULL Locations ToIOP: evse_id
   - PULL Locations ToIOP: “gireve_id” An Extra Gireve Property
   - PULL Locations ToIOP: tariff_ids
-  - PULL Locations ToIOP: Plug&Charge (P&C)
+  - PULL Locations ToIOP: Plug&Charge (P&C) : Connector Object - new attribute “capabilities”
   - PULL Locations ToIOP: Connector Standards
   - Fields Not Implemented by Gireve
   - PUSH Locations FromIOP
