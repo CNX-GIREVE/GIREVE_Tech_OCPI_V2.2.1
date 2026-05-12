@@ -24,6 +24,10 @@ As in OCPI 2.1.1, when requesting authorization, the CPO :
 -   Must specify 1 Location.
 -   Can set 0 to N EVSEs in its request. Gireve will select 1 and only 1 to continue the authorization request.
 
+Please note that a CPO can send a real-time authorization request with 0 or N evse_uid values in the payload.
+In such cases, Gireve will randomly select an EVSE belonging to the specified location and forward the request to the eMSP. The EVSE chosen by Gireve may not necessarily be the one actually used in the authorization process.
+However, the CPO is required to use the correct EVSE in both the Sessions and CDRs objects.
+
 ### Information and requirements
 
 -   Gireve suggests that CPOs do not download Tokens of eMSPs and to send a POST Tokens authorize request in case of unknown Tokens. For this reason, Gireve doesn’t include the download of Tokens by CPOs in its current implementation of OCPI 2.2.1.
