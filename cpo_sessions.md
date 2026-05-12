@@ -6,6 +6,7 @@
   - Session Initialisation
   - Smart charging use cases
   - PATCH Sessions
+  - Minimum Interval Between Session Updates
   - Store and forward – PUT Sessions
   - Advenir specific use case
 
